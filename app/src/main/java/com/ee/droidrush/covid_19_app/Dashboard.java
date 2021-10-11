@@ -3,6 +3,8 @@ package com.ee.droidrush.covid_19_app;
 import android.os.Bundle;
 import android.view.Menu;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -48,4 +50,11 @@ public class Dashboard extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public void loadDailyCases()
+    {
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+    }
+
 }
