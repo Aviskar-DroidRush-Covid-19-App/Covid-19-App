@@ -2,24 +2,28 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_vaccination_services">
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.ee.droidrush.covid_19_app.ui.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/nav_vaccination_services"
+        android:name="com.ee.droidrush.covid_19_app.ui.Vaccinator_Services_Fragment"
+        android:label="Vaccination Services"
+        tools:layout="@layout/fragment_vaccinator_services" />
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.ee.droidrush.covid_19_app.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_vaccinator_services"
+        android:name="com.ee.droidrush.covid_19_app.ui.Vaccination_Services_Fragment"
+        android:label="Vaccinator Services"
+        tools:layout="@layout/fragment_vaccination_services" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.ee.droidrush.covid_19_app.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_resources"
+        android:name="com.ee.droidrush.covid_19_app.ui.Resources_Fragment"
+        android:label="Resources"
+        tools:layout="@layout/fragment_resources" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.ee.droidrush.covid_19_app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
 </navigation>
