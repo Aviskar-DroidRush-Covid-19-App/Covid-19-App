@@ -1,9 +1,14 @@
 package com.ee.droidrush.covid_19_app;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
 
@@ -14,7 +19,9 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Dashboard extends AppCompatActivity {
+import org.json.JSONObject;
+
+public class HomeScreenActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -24,7 +31,7 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_home_screen);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navigation_view);
@@ -36,6 +43,10 @@ public class Dashboard extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dashboard);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
+
     }
 
     @Override
@@ -51,10 +62,6 @@ public class Dashboard extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void loadDailyCases()
-    {
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-    }
 
 }

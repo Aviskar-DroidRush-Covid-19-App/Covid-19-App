@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19App">
         <activity
-            android:name=".Dashboard"
+            android:name=".HomeScreenActivity"
             android:exported="true"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.Covid19App.NoActionBar">
