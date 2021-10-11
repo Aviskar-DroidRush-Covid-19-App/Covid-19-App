@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/activity_dashboard.xml" value="0.253125" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/activity_main.xml" value="0.24722222222222223" />
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/content_dashboard.xml" value="0.23425925925925925" />
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/menu/activity_main_drawer.xml" value="0.253125" />
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/menu/dashboard.xml" value="0.253125" />
       </map>
     </option>
   </component>
