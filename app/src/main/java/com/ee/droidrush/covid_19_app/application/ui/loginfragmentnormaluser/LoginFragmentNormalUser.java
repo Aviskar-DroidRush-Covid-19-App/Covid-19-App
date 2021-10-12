@@ -180,17 +180,31 @@ public class LoginFragmentNormalUser extends Fragment {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, verifyotpurl, OTPObject, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
-                    Log.d("Volley",response.toString());
-                    Toast.makeText(getContext(), response.toString(), Toast.LENGTH_SHORT).show();
+                    try{
+                        String token = response.getString("token");
+                        Log.d("Volley","token"+token);
+                        Toast.makeText(getContext(), "Logged in successfully", Toast.LENGTH_SHORT).show();
+                    }catch (Exception e)
+                    {
+                        Log.d("Volley",response.toString());
+                    }
                     progressDialog.dismiss();
                 }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    error.printStackTrace();
-                    Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    progressDialog.dismiss();
+            }, error -> {
+                error.printStackTrace();
+                String mes = null;
+                switch (error.networkResponse.statusCode)
+                {
+                    case 400:
+                        mes="Invalid OTP";break;
+                    case 401:
+                        mes="Unothorised access";break;
+                    case 500:
+                        mes="Internal server error";
+
                 }
+                Toast.makeText(getContext(), mes, Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             });
 
             requestQueue.add(jsonObjectRequest);
@@ -207,8 +221,6 @@ public class LoginFragmentNormalUser extends Fragment {
     public static String getEncryptedOTPstr(String o)
     {
         try{
-
-
             MessageDigest md  = MessageDigest.getInstance("SHA-256");
             byte[] hash = md.digest(o.getBytes("utf-8"));
             StringBuilder sb = new StringBuilder();
@@ -217,17 +229,12 @@ public class LoginFragmentNormalUser extends Fragment {
                 String h = Integer.toHexString(0xff&hash[i]);
                 if(h.length()==1)
                     sb.append('0');
-
                 sb.append(h);
             }
-
-            //p("hashed: "+sb.toString());
             return sb.toString();
-
         }catch(Exception e){
             e.printStackTrace();
         }
-
         return "";
     }
 
