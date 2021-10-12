@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,6 +33,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.security.MessageDigest;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class LoginFragmentNormalUser extends Fragment {
@@ -182,8 +185,9 @@ public class LoginFragmentNormalUser extends Fragment {
                 public void onResponse(JSONObject response) {
                     try{
                         String token = response.getString("token");
-                        Log.d("Volley","token"+token);
+                        Log.d("Volley","token "+token);
                         Toast.makeText(getContext(), "Logged in successfully", Toast.LENGTH_SHORT).show();
+                        loadBenifishiaries(token);
                     }catch (Exception e)
                     {
                         Log.d("Volley",response.toString());
@@ -237,6 +241,50 @@ public class LoginFragmentNormalUser extends Fragment {
         }
         return "";
     }
+
+
+    public void loadBenifishiaries(String token)
+    {
+        ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Loading beneficiaries...\nplease wait..");
+        progressDialog.show();
+        String linkForBenificiaries="https://cdn-api.co-vin.in/api/v2/appointment/beneficiaries";
+        try{
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,linkForBenificiaries, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    Log.d("Volley",response.toString());
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                    Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                    //Log.d(getHeaders().toString());
+                }
+            }){
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+
+
+                    Map<String ,String> mp = new HashMap<>();
+                    mp.put("Authorization","Bearer "+token);
+                    Log.d("Volley",mp.toString());
+                    return mp;
+                }
+
+            };
+
+            requestQueue.add(jsonObjectRequest);
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }

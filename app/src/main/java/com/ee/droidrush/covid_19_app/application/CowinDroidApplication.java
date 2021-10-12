@@ -10,4 +10,6 @@ public class CowinDroidApplication extends Application {
         return isLoggedIn;
     }
 
+
+
 }
