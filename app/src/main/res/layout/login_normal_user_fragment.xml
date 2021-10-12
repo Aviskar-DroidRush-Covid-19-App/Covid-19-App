@@ -44,7 +44,7 @@
             android:text="An OTP will be sent to yout mobile number for verification" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -57,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:capitalize="none"
+            android:enabled="false"
             android:text="Get OTP" />
 
         <TextView
@@ -106,6 +107,7 @@
 
         <EditText
 
+            android:id="@+id/otp_enter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -130,9 +132,11 @@
 
         <Button
 
+            android:id="@+id/verifyotp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:capitalize="none"
+            android:enabled="false"
             android:text="Verify &amp; Proceed" />
 
     </LinearLayout>
