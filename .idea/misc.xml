@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/drawable/background_circuler_heart_login_screen.xml" value="0.24351851851851852" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/activity_dashboard.xml" value="0.253125" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/activity_main.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/app_bar_dashboard.xml" value="0.253125" />
@@ -12,6 +13,7 @@
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/fragment_main.xml" value="0.2390625" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/fragment_slideshow.xml" value="0.253125" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/fragment_vaccinator_services.xml" value="0.253125" />
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/login_normal_user_fragment.xml" value="0.264" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/layout/nav_header_dashboard.xml" value="0.253125" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/menu/activity_main_drawer.xml" value="0.253125" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/Covid19App/app/src/main/res/menu/dashboard.xml" value="0.253125" />
