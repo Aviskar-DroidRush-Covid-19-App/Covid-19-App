@@ -10,13 +10,13 @@
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/nav_vaccination_services"
-        android:name="com.ee.droidrush.covid_19_app.ui.Vaccinator_Services_Fragment"
+        android:name="com.ee.droidrush.covid_19_app.ui.Vaccination_Services_Fragment"
         android:label="Vaccination Services"
         tools:layout="@layout/fragment_vaccinator_services" />
 
     <fragment
         android:id="@+id/nav_vaccinator_services"
-        android:name="com.ee.droidrush.covid_19_app.ui.Vaccination_Services_Fragment"
+        android:name="com.ee.droidrush.covid_19_app.ui.VaccinatorServices"
         android:label="Vaccinator Services"
         tools:layout="@layout/fragment_vaccination_services" />
 

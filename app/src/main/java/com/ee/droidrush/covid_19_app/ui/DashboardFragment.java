@@ -41,7 +41,6 @@ public class DashboardFragment extends Fragment {
                     JSONArray stateList = response.getJSONArray("states");
                     for (int i = 0; i < stateList.length(); i++) {
                         JSONObject st = stateList.getJSONObject(i);
-                        //l.add(new Pair(st.getString("state_name"),st.getInt("state_id")));
                         Log.d("Volley","name: "+st.getString("state_name")+"state-id: "+st.getInt("state_id"));
                     }
                 }catch (Exception e)
@@ -60,4 +59,7 @@ public class DashboardFragment extends Fragment {
         requestQueue.add(jsonObjectRequest);
 
     }
+
+
+
 }
