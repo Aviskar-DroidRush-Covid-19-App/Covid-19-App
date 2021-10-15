@@ -13,9 +13,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.ee.droidrush.covid_19_app.application.LoginActivity;
+import com.ee.droidrush.covid_19_app.ui.DashboardFragment;
+import com.ee.droidrush.covid_19_app.ui.Vaccination_Services_Fragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -47,7 +51,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dashboard);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
+       // setFragment(new DashboardFragment());
 
 
 
@@ -64,7 +68,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.login_activity_init)
         {
-            startActivity(new Intent(this, LoginActivity.class));
+            //setFragment(new Vaccination_Services_Fragment());
         }
         return super.onOptionsItemSelected(item);
 
@@ -77,6 +81,12 @@ public class HomeScreenActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-
+    public void setFragment(Fragment fragment)
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_dashboard,fragment)
+                .commit();
+    }
 
 }

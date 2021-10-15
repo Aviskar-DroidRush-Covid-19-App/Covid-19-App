@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.ee.droidrush.covid_19_app"
-        minSdk 21
+        minSdk 24
         targetSdk 30
         versionCode 1
         versionName "1.0"
@@ -46,4 +46,8 @@ dependencies {
 
     //for networking requests
     implementation 'com.android.volley:volley:1.2.1'
+
+    //qr code decoder
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
+    implementation('com.google.zxing:core:3.4.0')
 }
