@@ -32,7 +32,7 @@ import org.json.JSONObject;
 public class HomeScreenActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,8 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView = findViewById(R.id.navigation_view);
+
         setSupportActionBar(findViewById(R.id.toolbar));
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_dashboard,
                 R.id.nav_vaccination_services, R.id.nav_vaccinator_services, R.id.nav_resources)
@@ -59,8 +60,8 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.dashboard, menu);
-        return true;
+        //getMenuInflater().inflate(R.menu.dashboard, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
 
@@ -68,7 +69,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.login_activity_init)
         {
-            //setFragment(new Vaccination_Services_Fragment());
+
         }
         return super.onOptionsItemSelected(item);
 
@@ -81,12 +82,5 @@ public class HomeScreenActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void setFragment(Fragment fragment)
-    {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment_content_dashboard,fragment)
-                .commit();
-    }
 
 }

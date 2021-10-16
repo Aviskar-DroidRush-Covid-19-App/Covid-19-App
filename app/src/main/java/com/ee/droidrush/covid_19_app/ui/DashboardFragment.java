@@ -26,6 +26,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.ee.droidrush.covid_19_app.HomeScreenActivity;
 import com.ee.droidrush.covid_19_app.R;
 import com.ee.droidrush.covid_19_app.data_container.Center;
 import com.ee.droidrush.covid_19_app.data_container.CenterListAdpater;
@@ -63,6 +64,7 @@ public class DashboardFragment extends Fragment {
         requestQueue = Volley.newRequestQueue(getContext());
         View root= inflater.inflate(R.layout.fragment_dashboard, container, false);
         initilizeSlotSearchModule(root);
+        Button book_your_slot = root.findViewById(R.id.book_your_slot);
         return root;
     }
 
@@ -290,6 +292,7 @@ public class DashboardFragment extends Fragment {
                             String min_age_limit = sessions.getJSONObject(j).getString("min_age_limit");
                             int dose1 = sessions.getJSONObject(j).getInt("available_capacity_dose1");
                             int dose2 = sessions.getJSONObject(j).getInt("available_capacity_dose2");
+
                             Log.d("Threader", "total: " + total_avalable + " min_age_limit: " + min_age_limit + " dose1 " + dose1 + " dose2 " + dose2);
                             arrayList.add(new Center(name,address+'\n'+district+'\n'+state,name,fee_type,min_age_limit,dose1,dose2));
                         }

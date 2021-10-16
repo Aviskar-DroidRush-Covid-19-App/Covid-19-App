@@ -403,10 +403,11 @@
 
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/book_your_slot"
             style="@android:style/Widget.Material.Button.Inset"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="@drawable/drawable_circuler_simple"
             android:text="Book your slot" />
 
     </LinearLayout>
