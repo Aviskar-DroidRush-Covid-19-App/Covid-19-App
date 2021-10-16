@@ -4,38 +4,233 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.VaccinatorServices">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Account details" />
-
-    <TextView
-        android:id="@+id/mob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registered Mobile No.:" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Raise an Issue" />
-
-    <TextView
-        android:id="@+id/ben_list"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Member" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="clip_vertical"
+                android:text="Account Details"
+                android:textColor="@color/purple_700"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Registered Mob. No.: XXX-XXX-0088"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="Raise an Issue" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/drawable_circuler_simple"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Durgesh Kumar"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="REF. ID : 45345345524"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Secret Code :4553"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Year of Birth : 2003" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Photo ID : Adhar Card" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="ID Number : XXXX-XXXX-5597" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_baseline_check_circle_24"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:text="Dose1"
+                        android:textColor="@color/green" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="COVISHIELD"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ballia Trama Center-01, 13 Sep 2021, 09:00AM-11:00AM"
+                        android:textColor="@color/green" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:minHeight="48dp"
+                        android:padding="4dp"
+                        android:text="Certificate"
+                        app:icon="@drawable/ic_certificate"
+                        app:iconSize="30dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_baseline_hourglass_empty_24"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:text="Dose1"
+                        android:textColor="@color/red" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Due Date 06 Dec,2021, Last Date 03 Jan 2022"
+                        android:textColor="@color/red" />
+
+                    <Button
+
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:minHeight="48dp"
+                        android:padding="4dp"
+                        android:text="Shedule"
+                        app:icon="@drawable/ic_calndericon"
+                        app:iconSize="30dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="Add Memeber"
+                app:icon="@drawable/ic_baseline_add_24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#75ED89"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:text="Note"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic"
+                    app:drawableLeftCompat="@drawable/ic_baseline_info_24" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:text="One registration per person is sufficient. Please do not register with multiple mobile numbers or different Photo ID Proofs for same individual.\n\n Scheduling of Second dose should be done from the same account (same mobile number) from which the first dose has been taken, for generation of final certificate. Separate registration for second dose is not necessary.\n\n Please carry the registered mobile phone and the requisite documents, including appointment slip, the Photo ID card used for registration, Employment Certificate (HCW/FLW) etc., while visiting the vaccination center, for verification at the time of vaccination.\n\n Please check for additional eligibility conditions, if any, prescribed by the respective State/UT Government for vaccination at Government Vaccination Centers, for 18-44 age group, and carry the other prescribed documents (e.g. Comorbidity Certificate etc.) as suggested by respective State/UT (on their website).\n\n The slots availability is displayed in the search (on district, pincode or map) based on the schedule populated by the DIOs (for Government Vaccination Centers) and private hospitals for their vaccination centers. \n\nThe vaccination schedule published by DIOs and private hospitals displays the list of vaccination centers with the following information \n1.The vaccine type.\n2. The age group (18-44/45+ etc.).\n3. The number of slots available for dose 1 and dose 2.\n4. Whether the service is Free or Paid (Vaccination is free of cost at all the Government Vaccination Centers).\n5. Per dose price charged by a private hospital.\n\n If you are seeking 1st dose vaccination, the system will show you only the available slots for dose 1. Similarly, if you are due for 2nd dose, the system will show you the available slots for dose 2 after the minimum period from the date of 1st dose vaccination has elapsed.\n\n Once a session has been published by the DIO/ private hospital, the session now can not be cancelled. However, the session may be rescheduled. In case you have booked an appointment in any such vaccination session that is rescheduled for any reason, your appointment will also be automatically rescheduled accordingly. You will receive a confirmation SMS in this regard. On such rescheduling, you would still have the option of cancelling or further rescheduling such appointment." />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

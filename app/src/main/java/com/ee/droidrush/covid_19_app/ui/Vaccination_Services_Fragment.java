@@ -40,13 +40,13 @@ public class Vaccination_Services_Fragment extends Fragment {
 
     CowinDroidApplication cowinDroidApplication;
     RequestQueue requestQueue;
-    TextView mob,ben_list;
+    //TextView mob,ben_list;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         requestQueue= Volley.newRequestQueue(getContext());
         View root=inflater.inflate(R.layout.fragment_vaccination_services, container, false);
-        mob=root.findViewById(R.id.mob);
-        ben_list=root.findViewById(R.id.ben_list);
+        //mob=root.findViewById(R.id.mob);
+        //ben_list=root.findViewById(R.id.ben_list);
         cowinDroidApplication= (CowinDroidApplication) getActivity().getApplication();
 
         if(!cowinDroidApplication.isAlreadyLoggedIn())
@@ -55,7 +55,7 @@ public class Vaccination_Services_Fragment extends Fragment {
         }else
         {
             loadBenifishiaries(cowinDroidApplication.sessionStoagre.get("token"));
-            mob.setText(mob.getText()+" "+cowinDroidApplication.sessionStoagre.get("mobile"));
+           // mob.setText(mob.getText()+" "+cowinDroidApplication.sessionStoagre.get("mobile"));
         }
 
         return root;
@@ -77,7 +77,7 @@ public class Vaccination_Services_Fragment extends Fragment {
                 Log.d("Login","Success");
                 Toast.makeText(getContext(), "Logged in successfully", Toast.LENGTH_SHORT).show();
                 loadBenifishiaries(cowinDroidApplication.sessionStoagre.get("token"));
-                mob.setText(mob.getText()+" "+cowinDroidApplication.sessionStoagre.get("mobile"));
+               // mob.setText(mob.getText()+" "+cowinDroidApplication.sessionStoagre.get("mobile"));
 
             }
         }
@@ -146,8 +146,7 @@ public class Vaccination_Services_Fragment extends Fragment {
     }
 
     public void loadBenifishiaries(String token)
-    {                    //token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIxNGMxNTVkOS1mZDU5LTQwN2ItOWIyMC05NWY1MDEzZjI3NmYiLCJ1c2VyX2lkIjoiMTRjMTU1ZDktZmQ1OS00MDdiLTliMjAtOTVmNTAxM2YyNzZmIiwidXNlcl90eXBlIjoiQkVORUZJQ0lBUlkiLCJtb2JpbGVfbnVtYmVyIjo5NjE2MjgwMDg4LCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjUzNDE4NDY0Mjc4NjUwLCJzZWNyZXRfa2V5IjoiYjVjYWIxNjctNzk3Ny00ZGYxLTgwMjctYTYzYWExNDRmMDRlIiwic291cmNlIjoiY293aW4iLCJ1YSI6Ik1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS85My4wLjQ1NzcuODIgU2FmYXJpLzUzNy4zNiBFZGcvOTMuMC45NjEuNTIiLCJkYXRlX21vZGlmaWVkIjoiMjAyMS0xMC0xM1QwMTo0NDozOC4wNDhaIiwiaWF0IjoxNjM0MDg5NDc4LCJleHAiOjE2MzQwOTAzNzh9.Z2ldhYWUfrKGjml2CtntGjLPArvH8PDlrG9jHeEOshc";
-
+    {
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading beneficiaries...\nplease wait..");
@@ -164,7 +163,7 @@ public class Vaccination_Services_Fragment extends Fragment {
                         {
                             JSONObject ben = all.getJSONObject(i);
                             Log.d("Volley",ben.getString("name")+ben.getString("birth_year")+ben.getString("beneficiary_reference_id"));
-                            ben_list.setText('\n'+ben.getString("name")+'\n'+ben.getString("birth_year")+ben.getString("beneficiary_reference_id"));
+                            // ben_list.setText('\n'+ben.getString("name")+'\n'+ben.getString("birth_year")+ben.getString("beneficiary_reference_id"));
                             //downloadCertificate(token,ben.getString("beneficiary_reference_id"));
                         }
 
