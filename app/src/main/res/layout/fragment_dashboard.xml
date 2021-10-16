@@ -100,79 +100,77 @@
                     </com.google.android.material.button.MaterialButtonToggleGroup>
 
                     <LinearLayout
+                        android:id="@+id/mpin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:visibility="gone"
+                        tools:visibility="gone">
 
-                        <LinearLayout
-                            android:id="@+id/mpin"
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:id="@+id/textInputLayout2"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone">
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="16dp"
+                            android:hint="Enter your 6 digit pin code"
+                            android:inputType="textPersonName"
 
-                            <com.google.android.material.textfield.TextInputLayout
+                            app:helperTextEnabled="false">
 
-                                android:id="@+id/textInputLayout2"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/pin_code_input"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_margin="16dp"
-                                android:hint="Enter your 6 digit pin code"
-                                android:inputType="textPersonName"
+                                android:inputType="number"
+                                android:maxLength="6" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
 
-                                app:helperTextEnabled="false">
+                    <LinearLayout
+                        android:id="@+id/mdistt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:visibility="visible">
 
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/pin_code_input"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:inputType="number"
-                                    android:maxLength="6" />
-                            </com.google.android.material.textfield.TextInputLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/mdistt"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="visible">
+                            android:layout_marginStart="@dimen/dim_side_margin"
+                            android:layout_marginEnd="@dimen/dim_side_margin">
 
-                            <com.google.android.material.textfield.TextInputLayout
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            <AutoCompleteTextView
+                                android:id="@+id/state"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/dim_side_margin"
-                                android:layout_marginEnd="@dimen/dim_side_margin">
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="none"
+                                android:text="Select state" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                                <AutoCompleteTextView
-                                    android:id="@+id/state"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:inputType="none"
-                                    android:text="Select state" />
-                            </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dim_side_margin"
+                            android:layout_marginEnd="@dimen/dim_side_margin">
 
-                            <com.google.android.material.textfield.TextInputLayout
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            <AutoCompleteTextView
+                                android:id="@+id/distt"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/dim_side_margin"
-                                android:layout_marginEnd="@dimen/dim_side_margin">
-
-                                <AutoCompleteTextView
-                                    android:id="@+id/distt"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:inputType="none"
-                                    android:text="Select your district" />
-                            </com.google.android.material.textfield.TextInputLayout>
-                        </LinearLayout>
-
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:inputType="none"
+                                android:text="Select your district" />
+                        </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
 
                     <Button
@@ -182,6 +180,32 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:text="Search" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/no_centers_available"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No centers are available for selected date, please check back again later"
+                            android:textAlignment="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            app:drawableTopCompat="@drawable/ic_baseline_coronavirus_24" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/slot_search_result_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="600dp"
+                            android:visibility="visible">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -193,7 +217,7 @@
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
                     android:layout_marginBottom="@dimen/activity_vertical_margin"
                     android:orientation="vertical"
-                    tools:visibility="visible">
+                    tools:visibility="gone">
 
                     <TextView
                         android:id="@+id/textView9"

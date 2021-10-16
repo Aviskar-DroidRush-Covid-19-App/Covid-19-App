@@ -13,9 +13,12 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,6 +27,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.ee.droidrush.covid_19_app.R;
+import com.ee.droidrush.covid_19_app.data_container.Center;
+import com.ee.droidrush.covid_19_app.data_container.CenterListAdpater;
 import com.ee.droidrush.covid_19_app.data_container.Pair;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.textfield.TextInputEditText;
@@ -48,6 +53,9 @@ public class DashboardFragment extends Fragment {
     SimpleDateFormat sdf;
     String date;
     boolean inPinCodeSearchMode=false;
+    RecyclerView slotSearchResultList;
+    CenterListAdpater adpater;
+    TextView no_center_available;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,6 +75,11 @@ public class DashboardFragment extends Fragment {
         disttList=root.findViewById(R.id.distt);
         pinCodeInput=root.findViewById(R.id.pin_code_input);
         search_slot_button=root.findViewById(R.id.search_slot_button);
+        slotSearchResultList=root.findViewById(R.id.slot_search_result_list);
+        no_center_available=root.findViewById(R.id.no_centers_available);
+        adpater = new CenterListAdpater();
+        slotSearchResultList.setLayoutManager(new LinearLayoutManager(getContext()));
+        slotSearchResultList.setAdapter(adpater);
         sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         sdf.setTimeZone(TimeZone.getDefault());
         date = sdf.format(new Date());
@@ -119,6 +132,9 @@ public class DashboardFragment extends Fragment {
             }
         });
     }
+
+
+
     public void loadStates()
     {
         ProgressDialog progressDialog = new ProgressDialog(getContext());
@@ -258,24 +274,41 @@ public class DashboardFragment extends Fragment {
             public void onResponse(JSONObject response) {
                 try {
                     JSONArray list = response.getJSONArray("centers");
+                    ArrayList<Center> arrayList = new ArrayList<>();
+                    adpater.setCenter(arrayList);
                     for(int i=0;i<list.length();i++)
                     {
                         String name = list.getJSONObject(i).getString("name");
                         Log.d("Threader","Results for center.."+name);
+                        String state = list.getJSONObject(i).getString("state_name");
+                        String district=list.getJSONObject(i).getString("district_name");
+                        String address = list.getJSONObject(i).getString("address");
+                        String fee_type= list.getJSONObject(i).getString("fee_type");
                         JSONArray sessions = list.getJSONObject(i).getJSONArray("sessions");
                         for(int j=0;j<sessions.length();j++) {
                             int total_avalable = sessions.getJSONObject(j).getInt("available_capacity");
-                            int min_age_limit = sessions.getJSONObject(j).getInt("min_age_limit");
+                            String min_age_limit = sessions.getJSONObject(j).getString("min_age_limit");
                             int dose1 = sessions.getJSONObject(j).getInt("available_capacity_dose1");
                             int dose2 = sessions.getJSONObject(j).getInt("available_capacity_dose2");
                             Log.d("Threader", "total: " + total_avalable + " min_age_limit: " + min_age_limit + " dose1 " + dose1 + " dose2 " + dose2);
-
-                        }}
+                            arrayList.add(new Center(name,address+'\n'+district+'\n'+state,name,fee_type,min_age_limit,dose1,dose2));
+                        }
+                    }
+                    if(arrayList.size()>0)
+                    {
+                        adpater.setCenter(arrayList);
+                        no_center_available.setVisibility(View.GONE);
+                        slotSearchResultList.setVisibility(View.VISIBLE);
+                    }else {
+                        no_center_available.setVisibility(View.VISIBLE);
+                        slotSearchResultList.setVisibility(View.GONE);
+                    }
                     progressDialog.dismiss();
                 }catch (Exception e)
                 {
                     e.printStackTrace();
                     Log.d("Threader","error"+e.toString());
+                    Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
