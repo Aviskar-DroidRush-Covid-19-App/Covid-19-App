@@ -6,13 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/drawable_circuler_simple"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:paddingBottom="16dp">
 
     <TextView
         android:id="@+id/name_ben"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:text="Durgesh Kumar"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -21,7 +23,6 @@
         android:id="@+id/ref_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="REF. ID : 45345345524"
         android:textStyle="bold" />
@@ -30,7 +31,6 @@
         android:id="@+id/sec_code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Secret Code :4553"
         android:textColor="@color/red"
@@ -40,7 +40,6 @@
         android:id="@+id/year_of_birth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Year of Birth : 2003" />
 
@@ -48,7 +47,6 @@
         android:id="@+id/photo_it_type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Photo ID : Adhar Card" />
 
@@ -56,14 +54,12 @@
         android:id="@+id/photo_id_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="ID Number : XXXX-XXXX-5597" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical">
@@ -93,7 +89,6 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
             android:minHeight="48dp"
             android:padding="4dp"
             android:text="Certificate"
@@ -104,8 +99,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical">
@@ -117,13 +111,14 @@
             android:drawableLeft="@drawable/ic_baseline_hourglass_empty_24"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="Dose1"
+            android:text="Dose2"
             android:textColor="@color/red" />
 
         <TextView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Not vaccinated"
             android:textStyle="bold" />
 
         <TextView
@@ -138,9 +133,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
             android:minHeight="48dp"
-            android:padding="4dp"
             android:text="Shedule"
             app:icon="@drawable/ic_calndericon"
             app:iconSize="30dp" />
