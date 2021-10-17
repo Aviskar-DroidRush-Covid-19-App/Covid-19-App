@@ -187,7 +187,6 @@ public class Vaccination_Services_Fragment extends Fragment {
                         ((TextView)v.findViewById(R.id.photo_id_number)).setText(String.format("ID number: %s", ben.getString("photo_id_number")));
                         ((TextView)v.findViewById(R.id.ref_id)).setText(String.format("REF ID: %s", ben.getString("beneficiary_reference_id")));
                         ((TextView)v.findViewById(R.id.sec_code)).setText(String.format("Secret Code: %s", ben.getString("beneficiary_reference_id").substring(ben.getString("beneficiary_reference_id").length()-4)));
-
                         String mob = ben.getString("mobile_number");
                         String vaccination_status=ben.getString("vaccination_status");
                         String dose1_date = ben.getString("dose1_date");
@@ -357,7 +356,6 @@ public class Vaccination_Services_Fragment extends Fragment {
                             Map<String ,String> mp = new HashMap<>();
                             mp.put("Authorization","Bearer "+cowinDroidApplication.sessionStoagre.get("token"));
                             mp.put("accept","application/json");
-                            //Log.d("Volley",mp.toString());
                             return mp;
                         }
                     };
@@ -369,11 +367,10 @@ public class Vaccination_Services_Fragment extends Fragment {
                     Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }
-
-                //if(year_of_birth.length()!=4||id_number.length()==0||)
-
             }
         });
     }
+
+
 
 }
