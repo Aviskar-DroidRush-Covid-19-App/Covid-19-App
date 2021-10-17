@@ -26,7 +26,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.ee.droidrush.covid_19_app.HomeScreenActivity;
 import com.ee.droidrush.covid_19_app.R;
 import com.ee.droidrush.covid_19_app.data_container.Center;
 import com.ee.droidrush.covid_19_app.data_container.CenterListAdpater;
@@ -73,9 +72,9 @@ public class DashboardFragment extends Fragment {
         slotSearchModeChangeButton = root.findViewById(R.id.toggle);
         mpin=root.findViewById(R.id.mpin);
         mdistt=root.findViewById(R.id.mdistt);
-        stateList=root.findViewById(R.id.state);
+        stateList=root.findViewById(R.id.photo_id_type_input);
         disttList=root.findViewById(R.id.distt);
-        pinCodeInput=root.findViewById(R.id.pin_code_input);
+        pinCodeInput=root.findViewById(R.id.photo_id_num_input);
         search_slot_button=root.findViewById(R.id.search_slot_button);
         slotSearchResultList=root.findViewById(R.id.slot_search_result_list);
         no_center_available=root.findViewById(R.id.no_centers_available);
@@ -104,27 +103,7 @@ public class DashboardFragment extends Fragment {
                 }
             }
         });
-        pinCodeInput.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-            @Override
-            public void afterTextChanged(Editable s) {
-                String s1 = s.toString();
-                if(s1.matches("^[1-9][0-9]{2}[0-9]{3}$"))
-                {
-                    try{
-                        int npin= Integer.parseInt(s1);
-                    }catch (Exception e)
-                    {
-                        Toast.makeText(getContext(), "Please enter valid pin code", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-        });
+
 
         slotSearchModeChangeButton.check(R.id.distt_mode);
         search_slot_button.setOnClickListener(new View.OnClickListener() {

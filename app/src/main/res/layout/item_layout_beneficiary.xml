@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/drawable_circuler_simple"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name_ben"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Durgesh Kumar"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ref_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="REF. ID : 45345345524"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sec_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Secret Code :4553"
+        android:textColor="@color/red"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/year_of_birth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Year of Birth : 2003" />
+
+    <TextView
+        android:id="@+id/photo_it_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Photo ID : Adhar Card" />
+
+    <TextView
+        android:id="@+id/photo_id_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="ID Number : XXXX-XXXX-5597" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_check_circle_24"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="Dose1"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COVISHIELD"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ballia Trama Center-01, 13 Sep 2021, 09:00AM-11:00AM"
+            android:textColor="@color/green" />
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:minHeight="48dp"
+            android:padding="4dp"
+            android:text="Certificate"
+            app:icon="@drawable/ic_certificate"
+            app:iconSize="30dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_hourglass_empty_24"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="Dose1"
+            android:textColor="@color/red" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Due Date 06 Dec,2021, Last Date 03 Jan 2022"
+            android:textColor="@color/red" />
+
+        <Button
+
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:minHeight="48dp"
+            android:padding="4dp"
+            android:text="Shedule"
+            app:icon="@drawable/ic_calndericon"
+            app:iconSize="30dp" />
+    </LinearLayout>
+</LinearLayout>

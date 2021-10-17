@@ -34,7 +34,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
@@ -45,7 +44,6 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal|center_vertical"
@@ -55,7 +53,6 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal|center_vertical"
@@ -89,7 +86,6 @@
                             app:iconPadding="0dp" />
 
                         <Button
-                            android:id="@+id/pin_code_mode"
                             style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -111,7 +107,6 @@
 
                         <com.google.android.material.textfield.TextInputLayout
 
-                            android:id="@+id/textInputLayout2"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -123,7 +118,7 @@
                             app:helperTextEnabled="false">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/pin_code_input"
+                                android:id="@+id/photo_id_num_input"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="number"
@@ -148,7 +143,7 @@
                             android:layout_marginEnd="@dimen/dim_side_margin">
 
                             <AutoCompleteTextView
-                                android:id="@+id/state"
+                                android:id="@+id/photo_id_type_input"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -220,7 +215,6 @@
                     tools:visibility="gone">
 
                     <TextView
-                        android:id="@+id/textView9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="16dp"
@@ -229,7 +223,6 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="16dp"
@@ -255,7 +248,6 @@
 
                     <TextView
 
-                        android:id="@+id/textView12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
@@ -265,7 +257,6 @@
 
                     <TextView
 
-                        android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
@@ -275,7 +266,6 @@
 
                     <TextView
 
-                        android:id="@+id/textView14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
@@ -284,7 +274,6 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:id="@+id/imageView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/callcenter_amico" />
@@ -301,7 +290,6 @@
                     tools:visibility="gone">
 
                     <TextView
-                        android:id="@+id/textView15"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -311,7 +299,6 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -320,7 +307,6 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView17"
                         style="@style/Widget.MaterialComponents.TextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -379,7 +365,6 @@
                     android:visibility="gone">
 
                     <TextView
-                        android:id="@+id/textView18"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -390,7 +375,6 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/button5"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

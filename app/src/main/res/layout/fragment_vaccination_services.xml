@@ -19,7 +19,6 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="clip_vertical"
@@ -29,7 +28,6 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -37,7 +35,6 @@
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/button"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,155 +44,13 @@
                 android:text="Raise an Issue" />
 
             <LinearLayout
+                android:id="@+id/container_ben"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/drawable_circuler_simple"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Durgesh Kumar"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="REF. ID : 45345345524"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="Secret Code :4553"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="Year of Birth : 2003" />
-
-                <TextView
-                    android:id="@+id/textView23"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="Photo ID : Adhar Card" />
-
-                <TextView
-                    android:id="@+id/textView24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="ID Number : XXXX-XXXX-5597" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView27"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_baseline_check_circle_24"
-                        android:drawablePadding="8dp"
-                        android:gravity="center_vertical"
-                        android:text="Dose1"
-                        android:textColor="@color/green" />
-
-                    <TextView
-                        android:id="@+id/textView28"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="COVISHIELD"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textView29"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Ballia Trama Center-01, 13 Sep 2021, 09:00AM-11:00AM"
-                        android:textColor="@color/green" />
-
-                    <Button
-                        android:id="@+id/button3"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="16dp"
-                        android:minHeight="48dp"
-                        android:padding="4dp"
-                        android:text="Certificate"
-                        app:icon="@drawable/ic_certificate"
-                        app:iconSize="30dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_baseline_hourglass_empty_24"
-                        android:drawablePadding="8dp"
-                        android:gravity="center_vertical"
-                        android:text="Dose1"
-                        android:textColor="@color/red" />
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold" />
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Due Date 06 Dec,2021, Last Date 03 Jan 2022"
-                        android:textColor="@color/red" />
-
-                    <Button
-
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="16dp"
-                        android:minHeight="48dp"
-                        android:padding="4dp"
-                        android:text="Shedule"
-                        app:icon="@drawable/ic_calndericon"
-                        app:iconSize="30dp" />
-                </LinearLayout>
-            </LinearLayout>
+                android:orientation="vertical"></LinearLayout>
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/add_member"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -213,7 +68,6 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/textView31"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -224,7 +78,6 @@
                     app:drawableLeftCompat="@drawable/ic_baseline_info_24" />
 
                 <TextView
-                    android:id="@+id/textView30"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
